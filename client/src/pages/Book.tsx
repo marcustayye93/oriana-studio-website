@@ -4,7 +4,7 @@
    thin-serif accents, pill buttons, no long scroll. */
 import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "wouter";
-import { SERVICES, waLink, LOCATION } from "@/lib/site";
+import { SERVICES, waLink, LOCATION, POLICIES } from "@/lib/site";
 import { useReveal } from "@/hooks/useReveal";
 
 const DAYS = ["Tue", "Wed", "Thu", "Fri", "Sat"] as const;
@@ -222,6 +222,13 @@ export default function Book() {
               address by reply — usually within the day. Certified &amp;
               insured lash artist · one client at a time.
             </p>
+
+            {/* The quiet fine print — trust at the decision moment (R11) */}
+            <ul className="rise mt-4 space-y-1.5 border-t border-border pt-4 text-xs leading-relaxed text-muted-foreground/80">
+              {POLICIES.map((p) => (
+                <li key={p}>{p}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

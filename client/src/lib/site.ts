@@ -49,6 +49,8 @@ export const IMG = {
   svcVolume: "/manus-storage/oriana-v5-service-volume_e33b303b.webp",
   svcLift: "/manus-storage/oriana-v5-service-lift_ce8c6fa6.webp",
   svcInfill: "/manus-storage/oriana-v4-service-infill_219fdd48.webp",
+  // Round-11: Soft Hybrid — wispy Korean-natural hybrid set (Grok audit P2)
+  svcHybrid: "/manus-storage/oriana-v5-service-hybrid_5fc0bbc6.webp",
 };
 
 /* Location — Woodlands South. Short form for footers/cards, long form for directions. */
@@ -75,6 +77,23 @@ export const VOICE = {
 } as const;
 
 /* Opening pricing — new-studio rates. Entry set starts at S$60; the ladder steps up from there. */
+/* Round 11 (Grok audit): opening rates are explicitly for the first 20 clients;
+   infill pricing made explicit (S$45 ≤3wk / S$55 ≤4wk); removal priced at S$20. */
+export const OPENING_NOTE =
+  "Opening rates — held for the studio's first 20 clients." as const;
+
+export const TRUST_LINE =
+  "Certified & insured · one client at a time · HDB home-based, registered" as const;
+
+export const POLICIES = [
+  "Sensitive-eye adhesive is the house standard; a free patch test is available 48 hours ahead.",
+  "Life happens — 24 hours' notice to reschedule is all we ask. No deposit needed.",
+  "Certified & insured lash artist. Tools are single-use or hospital-grade sterilised between clients.",
+] as const;
+
+export const REMOVAL_NOTE =
+  "Gentle removal of an existing set — S$20, or complimentary before any new Oriana set." as const;
+
 export const SERVICES = [
   {
     name: "First Light",
@@ -96,6 +115,29 @@ export const SERVICES = [
         "3–4 weeks before an infill, moving with your natural lash cycle.",
       forWho:
         "First-timers, minimalists, and anyone whose office has opinions.",
+    },
+  },
+  {
+    name: "Soft Hybrid",
+    descriptor: "Hybrid — wispy, Korean-natural texture",
+    body: "The in-between set: classic lashes and small handmade fans mixed for a wispy, Korean-natural texture. Fuller than classic, softer than volume — the most-asked-for look right now.",
+    duration: "2.25 hrs",
+    price: "S$78",
+    note: "Opening rate — the studio's signature texture",
+    photo: "/manus-storage/oriana-v5-service-hybrid_5fc0bbc6.webp",
+    photoAlt:
+      "Result of Soft Hybrid — a wispy Korean-natural lash set mixing classic lashes and soft fans",
+    anatomy: {
+      applied:
+        "A deliberate mix — single classic extensions alternated with small 2–3D handmade fans, building soft spikes and airy criss-cross texture along the lash line.",
+      materials:
+        "0.07mm fans and 0.10mm classics in matte black PBT — the contrast between the two is what makes the wisp read.",
+      mapping:
+        "Spike-mapped: slightly longer closed points spaced between shorter fluff, following your eye shape. Never spidery — the gaps are the design.",
+      lasts:
+        "3–4 weeks before an infill, same rhythm as a classic set.",
+      forWho:
+        "Anyone who screenshots 'wispy' or 'Korean natural' sets — this is that, mapped to your eye.",
     },
   },
   {
@@ -145,10 +187,10 @@ export const SERVICES = [
   {
     name: "The Return",
     descriptor: "Infill — refresh an existing set",
-    body: "The infill. Outgrown extensions replaced, your set restored to day one. Book within three weeks of your last visit.",
+    body: "The infill. Outgrown extensions replaced, your set restored to day one. S$45 within 3 weeks of your last set, S$55 within 4 — past that, we start fresh.",
     duration: "1.5 hrs",
-    price: "from S$45",
-    note: "Within 3 weeks of your last set",
+    price: "S$45",
+    note: "Within 3 weeks of your last set · S$55 within 4 weeks",
     photo: "/manus-storage/oriana-v4-service-infill_219fdd48.webp",
     photoAlt: "Result of The Return — an infilled set restored to day one",
     anatomy: {
@@ -161,7 +203,7 @@ export const SERVICES = [
       lasts:
         "Resets the 3–4 week clock. Kept on schedule, a set lasts indefinitely.",
       forWho:
-        "Anyone with an Oriana set less than three weeks old. Past three weeks, we start fresh — honestly, it's better work.",
+        "Anyone with an Oriana set under four weeks old — S$45 within three weeks, S$55 within four. Past that, we start fresh — honestly, it's better work.",
     },
   },
 ] as const;

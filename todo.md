@@ -125,3 +125,14 @@
 - [x] R10: Optimize site weight — ALL images re-encoded to WebP: page payloads dropped from ~5MB/image to 40–455KB/image (~97% smaller)
 - [x] R10: Verify all pages desktop + mobile (375px), incl. /book with service param — renders correctly
 - [x] R10: Checkpoint, push to GitHub, deliver
+
+# Round 11 — Grok audit evaluation + implementation
+
+- [ ] R11: Evaluate Grok report → grok-audit-evaluation.md (accept/modify/reject with reasons)
+- [ ] R11: Generate hybrid/wispy service photo (v5 authentic-skin style)
+- [ ] R11: site.ts — add Soft Hybrid S$78 SKU; fix infill pricing (S$45 ≤3wk / S$55 ≤4wk); Removal S$20 footnote
+- [ ] R11: Copy — "opening rates · first 20 clients" on Home menu + Services intro
+- [ ] R11: Book.tsx — policy block under form (patch test, 24h reschedule, certified & insured)
+- [ ] R11: Trust strip near menu on Home + Services; hygiene line on Studio
+- [ ] R11: Alt-text sweep
+- [ ] R11: Verify desktop + mobile, checkpoint, push to GitHub, deliver evaluation + changes

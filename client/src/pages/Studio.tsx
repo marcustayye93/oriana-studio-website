@@ -160,7 +160,7 @@ export default function Studio() {
               },
               {
                 t: "What to expect",
-                d: "Tea, a consultation, about two quiet hours. Most clients fall asleep; we consider it feedback. You wake to the reveal.",
+                d: "Tea, a consultation, about two quiet hours. Tools are single-use or hospital-grade sterilised, linens fresh for every client, and the adhesive is a sensitive-eye formula. Most clients fall asleep; we consider it feedback.",
               },
               {
                 t: "Getting here",

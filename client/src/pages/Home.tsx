@@ -172,7 +172,7 @@ export default function Home() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 className="mega rise text-5xl md:text-7xl">The menu</h2>
             <p className="hand rise text-lg text-muted-foreground md:text-xl">
-              opening rates — from S$60
+              opening rates — held for our first 20 clients
             </p>
           </div>
           <ul className="mt-14 divide-y divide-border border-y border-border">
@@ -219,8 +219,8 @@ export default function Home() {
               See the full menu <span className="btn-arrow">→</span>
             </Link>
             <p className="text-xs leading-relaxed text-muted-foreground">
-              Tap any set to book it · Certified &amp; insured lash artist ·
-              One client at a time
+              Tap any set to book it · Certified &amp; insured · One client at
+              a time · HDB home-based, registered
             </p>
           </div>
         </div>

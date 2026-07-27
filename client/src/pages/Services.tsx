@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { useReveal } from "@/hooks/useReveal";
 import { Link } from "wouter";
-import { IMG, SERVICES } from "@/lib/site";
+import { IMG, REMOVAL_NOTE, SERVICES } from "@/lib/site";
 
 const ANATOMY_LABELS: Record<string, string> = {
   applied: "What goes on",
@@ -35,16 +35,16 @@ export default function Services() {
               The menu
             </h1>
             <p className="hand rise mt-6 text-2xl text-muted-foreground md:text-3xl">
-              opening rates — from S$60
+              opening rates — held for our first 20 clients
             </p>
             <p className="rise mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Extensions, volume, a lift, and the infill — at opening rates
-              while we're new. Undecided? Say so in your message — the
-              consultation settles it.
+              Extensions, hybrid, volume, a lift, and the infill — from S$45,
+              at opening rates while we're new. Undecided? Say so in your
+              message — the consultation settles it.
             </p>
             <p className="rise mt-4 text-xs tracking-wide text-muted-foreground/80">
-              Certified &amp; insured lash artist · one client at a time · by
-              appointment
+              Certified &amp; insured · one client at a time · HDB home-based,
+              registered · by appointment
             </p>
           </div>
           <div className="hidden items-end justify-end md:col-span-5 md:flex">
@@ -121,6 +121,9 @@ export default function Services() {
             </article>
           ))}
         </div>
+        <p className="rise mt-8 text-xs leading-relaxed tracking-wide text-muted-foreground/80">
+          {REMOVAL_NOTE}
+        </p>
       </section>
 
       {/* Keepsake kit + policies */}
@@ -150,11 +153,16 @@ export default function Services() {
               <h3 className="eyebrow text-muted-foreground">Quiet policies</h3>
               <ul className="mt-5 max-w-md space-y-3 text-sm leading-relaxed text-muted-foreground">
                 <li>
-                  24 hours' notice to reschedule, please.
+                  24 hours' notice to reschedule, please. No deposit needed.
                 </li>
                 <li>
-                  Infills within three weeks of your last set; after that, a
-                  new set works better.
+                  Infills are S$45 within three weeks of your last set, S$55
+                  within four; after that, a new set works better.
+                </li>
+                <li>
+                  Sensitive-eye adhesive is the house standard, and a free
+                  patch test is available 48 hours ahead. Tools are single-use
+                  or hospital-grade sterilised between clients.
                 </li>
                 <li>
                   Arrive with clean lashes if you can — if not, the cleanse is
