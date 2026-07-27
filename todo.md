@@ -128,11 +128,21 @@
 
 # Round 11 — Grok audit evaluation + implementation
 
-- [ ] R11: Evaluate Grok report → grok-audit-evaluation.md (accept/modify/reject with reasons)
-- [ ] R11: Generate hybrid/wispy service photo (v5 authentic-skin style)
-- [ ] R11: site.ts — add Soft Hybrid S$78 SKU; fix infill pricing (S$45 ≤3wk / S$55 ≤4wk); Removal S$20 footnote
-- [ ] R11: Copy — "opening rates · first 20 clients" on Home menu + Services intro
-- [ ] R11: Book.tsx — policy block under form (patch test, 24h reschedule, certified & insured)
-- [ ] R11: Trust strip near menu on Home + Services; hygiene line on Studio
-- [ ] R11: Alt-text sweep
-- [ ] R11: Verify desktop + mobile, checkpoint, push to GitHub, deliver evaluation + changes
+- [x] R11: Evaluate Grok report → grok-audit-evaluation.md (accept/modify/reject with reasons)
+- [x] R11: Generate hybrid/wispy service photo (v5 authentic-skin style)
+- [x] R11: site.ts — add Soft Hybrid S$78 SKU; fix infill pricing (S$45 ≤3wk / S$55 ≤4wk); Removal S$20 footnote
+- [x] R11: Copy — "opening rates · first 20 clients" on Home menu + Services intro
+- [x] R11: Book.tsx — policy block under form (patch test, 24h reschedule, certified & insured)
+- [x] R11: Trust strip near menu on Home + Services; hygiene line on Studio
+- [x] R11: Alt-text sweep (verified — all meaningful images carry descriptive alts from R10)
+- [x] R11: Verify desktop + mobile, checkpoint (118b0891), push to GitHub, deliver evaluation + changes
+
+# Round 12 — Aftercare page elevation
+
+- [ ] R12: Read Aftercare.tsx — map current steps, images, layout
+- [ ] R12: Generate classier aftercare hero image (mood-board tone: warm gold light, editorial, real skin)
+- [ ] R12: Generate Keepsake Kit product photo properly featuring the products (branded cleanser bottle + soft lash brush)
+- [ ] R12: Add elegant thin-stroke icons to every aftercare step (lucide-react, sage/gold accent)
+- [ ] R12: Make the aftercare image larger in the layout
+- [ ] R12: Compress new images to WebP, upload, swap URLs (site.ts + Services keepsake section)
+- [ ] R12: Verify desktop + mobile, checkpoint, push both GitHub repos, deliver

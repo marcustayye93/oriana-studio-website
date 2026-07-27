@@ -130,10 +130,10 @@ export default function Services() {
       <section className="border-t border-border bg-[var(--sand)]/40">
         <div className="container grid gap-12 py-24 md:grid-cols-12 md:py-32">
           <div className="md:col-span-5">
-            <div className="rise aspect-[4/3] w-full max-w-[480px]">
+            <div className="rise aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-xl">
               <img decoding="async"
                 src={IMG.aftercare}
-                alt="The Keep the Light aftercare card on ivory linen"
+                alt="The Keepsake Kit — Oriana lash foam cleanser, gold spoolie brush, lint-free cloth and the Keep the Light card"
                 className="h-full w-full object-cover"
               />
             </div>

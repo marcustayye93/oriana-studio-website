@@ -1,11 +1,52 @@
 /*
   ORIANA — Keep the Light (aftercare). Care styled as a short morning-and-evening rite.
   Editorial single-column measures, sand section alternation.
-  Round 3: sage accents, Petit Formal Script sizing, witty-classy trims.
+  Round 12: elegant thin-stroke step icons, larger classier hero (v6 editorial),
+  Keepsake Kit product photo properly featuring the products.
 */
 import { Link } from "wouter";
+import {
+  Droplets,
+  Brush,
+  Sparkles,
+  Waves,
+  Feather,
+  Moon,
+  Clock,
+  FlaskRound,
+  Hand,
+  Scissors,
+  CircleDashed,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 import { IMG } from "@/lib/site";
+
+/* Elegant step row: thin-stroke icon in an airy ring, then the text */
+function Step({
+  icon: Icon,
+  children,
+  tone = "light",
+}: {
+  icon: LucideIcon;
+  children: React.ReactNode;
+  tone?: "light" | "dark";
+}) {
+  const ring =
+    tone === "dark"
+      ? "border-primary-foreground/25 text-[oklch(0.85_0.07_85)]"
+      : "border-[var(--sage)]/40 text-[var(--sage)]";
+  return (
+    <li className="flex items-start gap-4">
+      <span
+        className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border ${ring}`}
+      >
+        <Icon className="h-4 w-4" strokeWidth={1.25} />
+      </span>
+      <span className="pt-1.5">{children}</span>
+    </li>
+  );
+}
 
 export default function Aftercare() {
   const ref = useReveal();
@@ -25,14 +66,15 @@ export default function Aftercare() {
         </div>
       </section>
 
-      {/* Morning / Evening rites */}
+      {/* Editorial hero — larger, classier (v6) */}
       <section className="container pb-24 md:pb-36">
-        <div className="rise mx-auto mb-6 aspect-[16/6] w-full max-w-4xl overflow-hidden rounded-xl">
-          <img decoding="async"
-            src={IMG.macro}
-            alt="What a kept set looks like — clean, brushed lash extensions up close"
+        <div className="rise mb-8 w-full overflow-hidden rounded-xl md:mb-10">
+          <img
+            decoding="async"
+            src="/manus-storage/oriana-v6-aftercare-hero_6133439f.webp"
+            alt="A gold spoolie brushing a natural wispy lash set in warm morning light"
             loading="lazy"
-            className="h-full w-full object-cover object-center"
+            className="aspect-[4/3] w-full object-cover object-center sm:aspect-[16/8] md:aspect-[16/7]"
           />
         </div>
         <div className="grid gap-6 md:grid-cols-2">
@@ -41,15 +83,17 @@ export default function Aftercare() {
               At first light
             </p>
             <h2 className="font-display mt-3 text-3xl">The morning rite</h2>
-            <ul className="mt-8 space-y-5 text-sm leading-relaxed text-muted-foreground md:text-base">
-              <li>
+            <ul className="mt-8 space-y-6 text-sm leading-relaxed text-muted-foreground md:text-base">
+              <Step icon={Droplets}>
                 Rinse the lash line with water only — no oil, no rubbing.
-              </li>
-              <li>Brush once, root to tip, with the spoolie from your kit.</li>
-              <li>
+              </Step>
+              <Step icon={Brush}>
+                Brush once, root to tip, with the spoolie from your kit.
+              </Step>
+              <Step icon={Sparkles}>
                 If you wear skincare, keep oils and heavy creams below the
                 orbital bone.
-              </li>
+              </Step>
             </ul>
           </div>
           <div className="rise bg-primary p-10 text-primary-foreground md:p-14">
@@ -57,16 +101,18 @@ export default function Aftercare() {
               At day's end
             </p>
             <h2 className="font-display mt-3 text-3xl">The evening rite</h2>
-            <ul className="mt-8 space-y-5 text-sm leading-relaxed text-primary-foreground/75 md:text-base">
-              <li>
+            <ul className="mt-8 space-y-6 text-sm leading-relaxed text-primary-foreground/75 md:text-base">
+              <Step icon={Waves} tone="dark">
                 Cleanse with a lash-safe foam cleanser — every evening you wore
                 makeup, every second evening otherwise.
-              </li>
-              <li>Pat dry with a lint-free tissue; never a towel's rub.</li>
-              <li>
+              </Step>
+              <Step icon={Feather} tone="dark">
+                Pat dry with a lint-free tissue; never a towel's rub.
+              </Step>
+              <Step icon={Moon} tone="dark">
                 Sleep on your back or side if you can — a silk pillowcase is
                 the quiet luxury that pays for itself.
-              </li>
+              </Step>
             </ul>
           </div>
         </div>
@@ -82,37 +128,49 @@ export default function Aftercare() {
             <h2 className="font-display rise mt-5 text-3xl md:text-4xl">
               Let the bond set
             </h2>
-            <p className="rise mt-6 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
-              Keep the lash line dry for the first 24 hours — no steam, hot
-              yoga, swimming, or long hot showers. After that, live normally.
-            </p>
+            <ul className="rise mt-6 max-w-md space-y-6 text-sm leading-relaxed text-muted-foreground md:text-base">
+              <Step icon={Clock}>
+                Keep the lash line dry for the first 24 hours — no steam, hot
+                yoga, swimming, or long hot showers. After that, live normally.
+              </Step>
+            </ul>
           </div>
           <div className="md:col-span-5 md:col-start-8">
             <p className="eyebrow rise text-[var(--sage)]">Always avoid</p>
-            <ul className="rise mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground md:text-base">
-              <li>Oil-based cleansers and waterproof mascara at the lash line</li>
-              <li>Rubbing, picking, or pulling — ever</li>
-              <li>Lash curlers — you already paid for the curl</li>
-              <li>Cotton pads near the extensions (fibres catch)</li>
+            <ul className="rise mt-6 space-y-6 text-sm leading-relaxed text-muted-foreground md:text-base">
+              <Step icon={FlaskRound}>
+                Oil-based cleansers and waterproof mascara at the lash line
+              </Step>
+              <Step icon={Hand}>Rubbing, picking, or pulling — ever</Step>
+              <Step icon={Scissors}>
+                Lash curlers — you already paid for the curl
+              </Step>
+              <Step icon={CircleDashed}>
+                Cotton pads near the extensions (fibres catch)
+              </Step>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* The Return */}
+      {/* The Keepsake Kit + The Return */}
       <section className="container py-24 md:py-36">
         <div className="grid items-center gap-12 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <div className="rise aspect-[4/3] w-full">
-              <img decoding="async"
-                src={IMG.aftercare}
-                alt="The Keep the Light aftercare card"
+          <div className="md:col-span-6">
+            <div className="rise w-full overflow-hidden rounded-xl">
+              <img
+                decoding="async"
+                src="/manus-storage/oriana-v6-keepsake-kit_01359d9a.webp"
+                alt="The Keepsake Kit — Oriana lash foam cleanser, gold spoolie brush, lint-free cloth and the Keep the Light card on ivory linen"
                 loading="lazy"
-                className="h-full w-full object-cover"
+                className="aspect-[4/3] h-auto w-full object-cover"
               />
             </div>
+            <p className="hand rise mt-4 text-center text-lg text-muted-foreground">
+              your kit — cleanser, spoolie, cloth, card
+            </p>
           </div>
-          <div className="md:col-span-6 md:col-start-7">
+          <div className="md:col-span-5 md:col-start-8">
             <p className="eyebrow rise text-[var(--sage)]">The Return</p>
             <h2 className="font-display rise mt-5 text-3xl leading-tight md:text-4xl">
               Your window is three weeks

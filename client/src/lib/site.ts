@@ -25,7 +25,7 @@ export const IMG = {
   craft: "/manus-storage/craft-hands_ce6292b0.webp",
   reveal: "/manus-storage/reveal-mirror_c0dcaab5.webp",
   artist: "/manus-storage/artist-portrait_64e1b0db.webp",
-  aftercare: "/manus-storage/aftercare-card_8576d5a5.webp",
+  aftercare: "/manus-storage/oriana-v6-keepsake-kit_01359d9a.webp",
   glyph: "/manus-storage/glyph-crop_7df0bbb4.webp",
   // iPhone-realism assets (compressed)
   wubbles: "/manus-storage/iphone-wubbles_eb76cb88.webp",
