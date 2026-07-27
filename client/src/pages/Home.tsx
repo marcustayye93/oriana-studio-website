@@ -2,7 +2,7 @@
   ORIANA STUDIO — Home, round 4 (v2.0 gradient-grain identity).
   Macro freckled-eye hero (imperfection-forward), grain overlay on gradients,
   Cormorant Garamond 300 display, inclusive "for absolutely anyone" section with
-  a male client portrait, marquee kept, Wubbles kept. Gradients never behind body copy.
+  a male client portrait, marquee kept, Wobbles kept. Gradients never behind body copy.
 */
 import { Link } from "wouter";
 import { useReveal } from "@/hooks/useReveal";
@@ -267,7 +267,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ——— The room + Wubbles cameo ——— */}
+      {/* ——— The room + Wobbles cameo ——— */}
       <section className="container py-24 md:py-36">
         <div className="grid gap-6 md:grid-cols-12 md:gap-8">
           <div className="rise md:col-span-8">
@@ -288,13 +288,13 @@ export default function Home() {
             <div className="relative h-full min-h-[320px] overflow-hidden">
               <img decoding="async"
                 src={IMG.wubbles}
-                alt="Wubbles the Cavapoo, resident greeter"
+                alt="Wobbles the Cavapoo, resident greeter"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               <p className="hand absolute bottom-5 left-5 rotate-[-2deg] text-xl leading-snug text-white">
-                Wubbles.
+                Wobbles.
                 <br />
                 <span className="text-sm text-white/85">
                   head of first impressions. banned from the lash room
@@ -305,7 +305,7 @@ export default function Home() {
         </div>
         <p className="rise mx-auto mt-12 max-w-md text-center text-sm leading-relaxed text-muted-foreground">
           A private home studio: tea first, then your hour. Most clients fall
-          asleep. Wubbles stays in the lounge — or elsewhere, if you ask.{" "}
+          asleep. Wobbles stays in the lounge — or elsewhere, if you ask.{" "}
           {LOCATION.block}, near Woodlands South MRT.
         </p>
       </section>

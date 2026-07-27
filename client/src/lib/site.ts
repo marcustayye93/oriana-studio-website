@@ -70,7 +70,7 @@ export const VOICE = {
     "I've loved beauty since I was young — drawing, colour, the mechanical pencil across the flow of paper. Lashes are the same hand, a finer line.",
   room: "Quiet, calm, a little cheery. Never too much.",
   wubbles:
-    "Wubbles, resident Cavapoo. Professional greeter, terrible receptionist.",
+    "Wobbles, resident Cavapoo. Professional greeter, terrible receptionist.",
   anyone: "Beauty, for absolutely anyone.",
   house:
     "Today, the lash line. The house will grow — quietly, one craft at a time.",

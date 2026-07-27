@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: "Can I request a dog-free visit?",
-    a: "Yes — mention it at booking and Wubbles stays elsewhere. The lash room itself is always dog-free.",
+    a: "Yes — mention it at booking and Wobbles stays elsewhere. The lash room itself is always dog-free.",
   },
   {
     q: "Do you take walk-ins?",
@@ -161,7 +161,7 @@ export default function Contact() {
       {/* Final line */}
       <section className="container py-24 text-center md:py-32">
         <p className="hand rise mx-auto max-w-xl text-xl leading-relaxed text-muted-foreground md:text-2xl">
-          "your hour is held — see you (and maybe Wubbles) soon"
+          "your hour is held — see you (and maybe Wobbles) soon"
         </p>
         <Link
           href="/book"

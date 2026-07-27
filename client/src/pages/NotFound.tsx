@@ -11,7 +11,7 @@ export default function NotFound() {
         <em className="italic text-[oklch(0.62_0.11_75)]">not on the menu.</em>
       </h1>
       <p className="hand mt-8 text-lg text-muted-foreground md:text-xl">
-        wubbles ate the link, probably. he denies everything
+        wobbles ate the link, probably. he denies everything
       </p>
       <Link
         href="/"

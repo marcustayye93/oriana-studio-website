@@ -1,6 +1,6 @@
 /*
   ORIANA — The Studio & Chesa, round 3. Visual-first, humanized:
-  her pencil origin in her own words, handwritten annotations, Wubbles by name.
+  her pencil origin in her own words, handwritten annotations, Wobbles by name.
   Round 3: Petit Formal Script .hand (smaller sizes), sage accent, witty/classy copy.
 */
 import { Link } from "wouter";
@@ -112,7 +112,7 @@ export default function Studio() {
         </div>
       </section>
 
-      {/* Wubbles — full feature */}
+      {/* Wobbles — full feature */}
       <section className="container py-24 md:py-32">
         <div className="grid items-center gap-12 md:grid-cols-12">
           <div className="order-2 md:order-1 md:col-span-5">
@@ -120,7 +120,7 @@ export default function Studio() {
               Resident greeter
             </p>
             <h2 className="mega rise mt-5 text-5xl md:text-6xl">
-              Meet <em className="italic text-[oklch(0.62_0.11_75)]">Wubbles.</em>
+              Meet <em className="italic text-[oklch(0.62_0.11_75)]">Wobbles.</em>
             </h2>
             <p className="rise mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
               Cavapoo, head of first impressions. He greets in the lounge if
@@ -133,14 +133,14 @@ export default function Studio() {
               href="/book"
               className="btn-pill-outline rise mt-8 text-[var(--sage)] hover:bg-[var(--sage)] hover:text-white"
             >
-              Book a visit — Wubbles included <span className="btn-arrow">→</span>
+              Book a visit — Wobbles included <span className="btn-arrow">→</span>
             </Link>
           </div>
           <div className="order-1 md:order-2 md:col-span-6 md:col-start-7">
             <div className="rise aspect-[4/5] w-full max-w-[520px] md:ml-auto">
               <img decoding="async"
                 src={IMG.wubbles}
-                alt="Wubbles the Cavapoo sitting in warm window light"
+                alt="Wobbles the Cavapoo sitting in warm window light"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />

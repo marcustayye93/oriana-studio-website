@@ -198,7 +198,7 @@ export function Footer() {
               <li>By appointment only</li>
               <li>{LOCATION.short}</li>
               <li>Near Woodlands South MRT · Block 587</li>
-              <li>Resident greeter: Wubbles the Cavapoo</li>
+              <li>Resident greeter: Wobbles the Cavapoo</li>
               <li>
                 <a
                   href={WA_DEFAULT}
