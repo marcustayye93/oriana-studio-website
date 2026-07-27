@@ -139,10 +139,19 @@
 
 # Round 12 — Aftercare page elevation
 
-- [ ] R12: Read Aftercare.tsx — map current steps, images, layout
-- [ ] R12: Generate classier aftercare hero image (mood-board tone: warm gold light, editorial, real skin)
-- [ ] R12: Generate Keepsake Kit product photo properly featuring the products (branded cleanser bottle + soft lash brush)
-- [ ] R12: Add elegant thin-stroke icons to every aftercare step (lucide-react, sage/gold accent)
-- [ ] R12: Make the aftercare image larger in the layout
-- [ ] R12: Compress new images to WebP, upload, swap URLs (site.ts + Services keepsake section)
-- [ ] R12: Verify desktop + mobile, checkpoint, push both GitHub repos, deliver
+- [x] R12: Read Aftercare.tsx — map current steps, images, layout
+- [x] R12: Generate classier aftercare hero image (mood-board tone: warm gold light, editorial, real skin)
+- [x] R12: Generate Keepsake Kit product photo properly featuring the products (branded cleanser bottle + soft lash brush)
+- [x] R12: Add elegant thin-stroke icons to every aftercare step (lucide-react, sage/gold accent)
+- [x] R12: Make the aftercare image larger in the layout
+- [x] R12: Compress new images to WebP, upload, swap URLs (site.ts + Services keepsake section)
+- [x] R12: Verify desktop + mobile, checkpoint (c980d699), push both GitHub repos, deliver
+- [x] R12b: Spelling fix Wubbles → Wobbles everywhere (checkpoint 1cdaefa1, pushed)
+
+# Round 13 — Grok audit: next usability item (/book decision moment, rank 8)
+
+- [x] R13: /book service cards show full descriptor (body + note expand on selection) so decisions happen in place
+- [x] R13: /book "How it works" 3-step strip (send → confirm → held) with thin-line icons
+- [x] R13: /book clearer selected-service state (check badge) + full request recap near the WhatsApp CTA + step-by-step guidance text
+- [x] R13: Verify desktop + 375 mobile, tsc clean
+- [ ] R13: Checkpoint + push both GitHub repos + deliver

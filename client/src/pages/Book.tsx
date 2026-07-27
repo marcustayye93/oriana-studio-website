@@ -6,9 +6,28 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "wouter";
 import { SERVICES, waLink, LOCATION, POLICIES } from "@/lib/site";
 import { useReveal } from "@/hooks/useReveal";
+import { Send, MessageCircle, CalendarCheck, Check } from "lucide-react";
 
 const DAYS = ["Tue", "Wed", "Thu", "Fri", "Sat"] as const;
 const WINDOWS = ["Morning (10–1)", "Afternoon (1–5)", "Evening (5–8)"] as const;
+
+const HOW_IT_WORKS = [
+  {
+    icon: Send,
+    title: "Send your request",
+    body: "Three taps here — it opens WhatsApp with everything written for you.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Chesa confirms",
+    body: "You'll get your exact hour and the address by reply, usually within the day.",
+  },
+  {
+    icon: CalendarCheck,
+    title: "Your hour is held",
+    body: "No account, no deposit. Just arrive with clean lashes — the room is yours.",
+  },
+] as const;
 
 export default function Book() {
   const ref = useReveal();
@@ -81,6 +100,28 @@ export default function Book() {
             <p className="rise mt-4 text-xs text-muted-foreground/80">
               Tue–Sat, by appointment · {LOCATION.short}
             </p>
+
+            {/* How it works — expectation setting at the decision moment (R13) */}
+            <ol className="rise mt-10 space-y-6 border-t border-border pt-8">
+              {HOW_IT_WORKS.map((step, i) => (
+                <li key={step.title} className="flex gap-4">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[oklch(0.52_0.06_150)]/40 text-[oklch(0.52_0.06_150)]">
+                    <step.icon className="h-4 w-4" strokeWidth={1.5} />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block font-display text-base leading-tight">
+                      <span className="mr-1.5 text-xs text-muted-foreground/70">
+                        {i + 1}.
+                      </span>
+                      {step.title}
+                    </span>
+                    <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
+                      {step.body}
+                    </span>
+                  </span>
+                </li>
+              ))}
+            </ol>
           </div>
 
           {/* Right: the form */}
@@ -97,12 +138,18 @@ export default function Book() {
                       key={s.name}
                       type="button"
                       onClick={() => setService(s.name)}
-                      className={`flex items-center gap-3 border p-3 text-left transition-all duration-200 press ${
+                      aria-pressed={service === s.name}
+                      className={`relative flex items-start gap-3 border p-3 text-left transition-all duration-200 press ${
                         service === s.name
                           ? "border-primary bg-primary/5"
                           : "border-border hover:border-primary/40"
                       }`}
                     >
+                      {service === s.name && (
+                        <span className="absolute right-2.5 top-2.5 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                          <Check className="h-3 w-3" strokeWidth={2.5} />
+                        </span>
+                      )}
                       <img decoding="async"
                         src={s.photo}
                         alt={s.photoAlt}
@@ -110,13 +157,31 @@ export default function Book() {
                         className="h-14 w-14 shrink-0 rounded-full object-cover"
                       />
                       <span className="min-w-0">
-                        <span className="block font-display text-lg leading-tight">
+                        <span className="block pr-6 font-display text-lg leading-tight">
                           {s.name}
                         </span>
-                        <span className="block text-xs leading-snug text-muted-foreground [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] overflow-hidden">
+                        <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
                           {s.descriptor}
                         </span>
-                        <span className="mt-0.5 block text-xs font-medium">
+                        <span
+                          className={`grid transition-all duration-300 ${
+                            service === s.name
+                              ? "grid-rows-[1fr] opacity-100"
+                              : "grid-rows-[0fr] opacity-0"
+                          }`}
+                        >
+                          <span className="overflow-hidden">
+                            <span className="mt-1.5 block text-xs leading-relaxed text-muted-foreground/90">
+                              {s.body}
+                            </span>
+                            {s.note && (
+                              <span className="mt-1 block text-[11px] italic leading-snug text-[oklch(0.52_0.06_150)]">
+                                {s.note}
+                              </span>
+                            )}
+                          </span>
+                        </span>
+                        <span className="mt-1 block text-xs font-medium">
                           {s.price} · {s.duration}
                         </span>
                       </span>
@@ -193,11 +258,29 @@ export default function Book() {
 
               {/* Send */}
               <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
-                <p className="text-xs leading-relaxed text-muted-foreground">
-                  {ready
-                    ? "Your request is ready — sends via WhatsApp."
-                    : "Pick a service, days, time, and your name."}
-                </p>
+                <div className="min-w-0 text-xs leading-relaxed text-muted-foreground">
+                  {ready && chosen ? (
+                    <>
+                      <p className="font-medium text-foreground">
+                        {chosen.name} · {chosen.price} · {chosen.duration}
+                      </p>
+                      <p className="mt-0.5">
+                        {days.join(" / ")} · {window_} · for {name.trim()} —
+                        sends via WhatsApp.
+                      </p>
+                    </>
+                  ) : (
+                    <p>
+                      {!service
+                        ? "Start by picking a service."
+                        : days.length === 0
+                          ? "Now pick the days that work."
+                          : !window_
+                            ? "Pick a time of day."
+                            : "Last one — your name."}
+                    </p>
+                  )}
+                </div>
                 <a
                   href={ready ? waLink(message) : undefined}
                   target="_blank"
