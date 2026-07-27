@@ -1,0 +1,369 @@
+/*
+  ORIANA STUDIO — v2.0 "Gradient-Grain" identity (Round 4)
+  Ground: Cream Hour #FAF4EA (brighter) · Ink: Umber #3B2F26 · Gold #C9963F · Eucalyptus #7E9C7B · Coral #E8785A (max one coral moment per surface)
+  Gradient-grain: peach→pink→gold→green→blue washes, ALWAYS grained (SVG turbulence), green always present in the blend.
+  Type: Cormorant Garamond LIGHT 300 (display) / Italiana (wordmark only) / Inter (body, UI, prices) / Petit Formal Script (Chesa's hand only).
+  Zero border-radius. Hairline borders. No pure white/black. Gradients never sit behind body copy.
+*/
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-sand: var(--sand);
+  --color-umber: var(--umber);
+  --color-ivory: var(--ivory);
+  --color-sage: var(--sage);
+  --color-coral: var(--coral);
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0rem;
+  /* Cream Hour ground — brighter than round 3 */
+  --background: oklch(0.966 0.018 88);
+  --ivory: oklch(0.966 0.018 88);
+  /* Umber ink */
+  --foreground: oklch(0.32 0.026 60);
+  --umber: oklch(0.32 0.026 60);
+  /* Honey Gold accent */
+  --gold: oklch(0.7 0.115 75);
+  /* Eucalyptus green — the brand's grounding accent, present in every gradient */
+  --sage: oklch(0.62 0.055 150);
+  /* Coral — the single warm exclamation; max one moment per surface */
+  --coral: oklch(0.7 0.14 35);
+  /* Blush Sand support */
+  --sand: oklch(0.87 0.032 60);
+  --card: oklch(0.966 0.018 88);
+  --card-foreground: oklch(0.32 0.026 60);
+  --popover: oklch(0.972 0.015 88);
+  --popover-foreground: oklch(0.32 0.026 60);
+  --primary: oklch(0.32 0.026 60);
+  --primary-foreground: oklch(0.966 0.018 88);
+  --secondary: oklch(0.87 0.032 60);
+  --secondary-foreground: oklch(0.32 0.026 60);
+  --muted: oklch(0.91 0.024 75);
+  --muted-foreground: oklch(0.52 0.028 60);
+  --accent: oklch(0.7 0.115 75);
+  --accent-foreground: oklch(0.966 0.018 88);
+  --destructive: oklch(0.55 0.18 28);
+  --destructive-foreground: oklch(0.966 0.018 88);
+  --border: oklch(0.32 0.026 60 / 18%);
+  --input: oklch(0.32 0.026 60 / 25%);
+  --ring: oklch(0.7 0.115 75);
+  --sidebar: oklch(0.966 0.018 88);
+  --sidebar-foreground: oklch(0.32 0.026 60);
+  --sidebar-primary: oklch(0.32 0.026 60);
+  --sidebar-primary-foreground: oklch(0.966 0.018 88);
+  --sidebar-accent: oklch(0.87 0.032 60);
+  --sidebar-accent-foreground: oklch(0.32 0.026 60);
+  --sidebar-border: oklch(0.32 0.026 60 / 18%);
+  --sidebar-ring: oklch(0.7 0.115 75);
+  --chart-1: oklch(0.7 0.115 75);
+  --chart-2: oklch(0.87 0.032 60);
+  --chart-3: oklch(0.52 0.028 60);
+  --chart-4: oklch(0.32 0.026 60);
+  --chart-5: oklch(0.91 0.024 75);
+  --ease-out-quiet: cubic-bezier(0.23, 1, 0.32, 1);
+  /* Gradient-grain stops (v2.0) */
+  --grad-peach: #f6c9a8;
+  --grad-pink: #efb7b0;
+  --grad-gold: #ebce8f;
+  --grad-green: #b7c9ac;
+  --grad-blue: #c3d3dc;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  ::selection {
+    background: oklch(0.7 0.115 75 / 30%);
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      max-width: 1160px;
+    }
+  }
+
+  /* Serif display */
+  .font-display {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  /* Wordmark — Italiana, wide-tracked (v2.0 lockup) */
+  .wordmark {
+    font-family: "Italiana", var(--font-serif);
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  /* Eyebrow label */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  /* Gold rule line */
+  .gold-rule {
+    height: 1px;
+    background: var(--gold);
+    width: 3rem;
+  }
+
+  /* Handwriting annotation layer — Chesa's margin notes */
+  .hand {
+    font-family: "Petit Formal Script", cursive;
+    font-weight: 400;
+    letter-spacing: 0.015em;
+    line-height: 1.7;
+  }
+
+  /* Oversized display type for visual-first statements */
+  .mega {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+
+  /* ——— v2.0 gradient-grain surfaces ———
+     Rules: always grained, green always in the blend, never behind body copy. */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.55;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+  .grad-dawn {
+    position: relative;
+    background: linear-gradient(
+      118deg,
+      var(--grad-peach) 0%,
+      var(--grad-pink) 28%,
+      var(--grad-gold) 55%,
+      var(--grad-green) 82%,
+      var(--grad-blue) 100%
+    );
+  }
+  .grad-dusk {
+    position: relative;
+    background: linear-gradient(
+      160deg,
+      var(--grad-green) 0%,
+      var(--grad-gold) 40%,
+      var(--grad-peach) 75%,
+      var(--grad-pink) 100%
+    );
+  }
+  .grad-veil {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--grad-peach) 45%, var(--ivory)) 0%,
+      color-mix(in oklch, var(--grad-gold) 40%, var(--ivory)) 45%,
+      color-mix(in oklch, var(--grad-green) 45%, var(--ivory)) 100%
+    );
+  }
+
+  /* Marquee strip of Chesa's phrases */
+  @keyframes marquee-x {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-x 38s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+
+  /* Slow ken-burns for full-bleed imagery */
+  @keyframes slow-scale {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.06);
+    }
+  }
+  .kenburns {
+    animation: slow-scale 16s ease-out forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .kenburns {
+      animation: none;
+    }
+  }
+
+  /* Underline-grow link hover */
+  .link-grow {
+    position: relative;
+    text-decoration: none;
+  }
+  .link-grow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 0;
+    background: currentColor;
+    transition: width 240ms var(--ease-out-quiet);
+  }
+  .link-grow:hover::after,
+  .link-grow[data-active="true"]::after {
+    width: 100%;
+  }
+
+  /* Buttons press feedback */
+  .press:active {
+    transform: scale(0.97);
+    transition: transform 140ms var(--ease-out-quiet);
+  }
+
+  /* Round 6 — pill CTAs. Buttons are rounded and carry a trailing arrow so it
+     reads instantly as "this takes you somewhere". Two variants:
+     .btn-pill (solid, pair with bg/text colors inline) and
+     .btn-pill-outline (hairline border, transparent). */
+  .btn-pill,
+  .btn-pill-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 1rem 1.9rem;
+    transition:
+      background-color 240ms var(--ease-out-quiet),
+      color 240ms var(--ease-out-quiet),
+      border-color 240ms var(--ease-out-quiet);
+  }
+  .btn-pill:active,
+  .btn-pill-outline:active {
+    transform: scale(0.97);
+    transition: transform 140ms var(--ease-out-quiet);
+  }
+  .btn-pill .btn-arrow,
+  .btn-pill-outline .btn-arrow {
+    display: inline-block;
+    transition: transform 240ms var(--ease-out-quiet);
+  }
+  .btn-pill:hover .btn-arrow,
+  .btn-pill-outline:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+  .btn-pill-outline {
+    border: 1px solid currentColor;
+    background: transparent;
+  }
+}
+
+/* Slow fade-and-rise entrances — opt-in: hidden state only applies once JS
+   adds .js to <html> (main.tsx), so content is never stuck invisible when a
+   WebView blocks scripts or IntersectionObserver misbehaves. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .rise:not(.in-view) {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .rise {
+    transition:
+      opacity 600ms var(--ease-out-quiet),
+      transform 600ms var(--ease-out-quiet);
+  }
+  .rise.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
